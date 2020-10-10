@@ -3,20 +3,19 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import confusion_matrix
 import numpy as np
-from GNB import precision, recall, f1_measure
+from metrics import *
+from utility import *
 
 # Training data set
-data_train1 = np.genfromtxt("train_2.csv", delimiter=",")
+data_train2 = csvToList("train_2.csv")
 # Separate features from classes
-X_train1 = data_train1[:, :-1]
-y_train1 = data_train1[:, -1]
+X_train1, y_train1 = getFeaturesAndClass(data_train2)
 
 # Validation set
-data_val1 = np.genfromtxt("val_2.csv", delimiter=",")
+data_val2 = csvToList("val_2.csv")
 
 # Separate features from classes
-X_val1 = data_val1[:, :-1]
-y_val1 = data_val1[:, -1]
+X_val1, y_val1 = getFeaturesAndClass(data_val2)
 
 # Apply GNB model
 gnb = GaussianNB()
@@ -27,11 +26,10 @@ cm = confusion_matrix(y_val1, y_val_pred1)
 print((y_val1 != y_val_pred1).sum())
 
 # Validation set
-data_test1 = np.genfromtxt("test_with_label_2.csv", delimiter=",")
+data_test2 = csvToList("test_with_label_2.csv")
 
 # Separate features from classes
-X_test1 = data_test1[:, :-1]
-y_test1 = data_test1[:, -1]
+X_test1, y_test1 = getFeaturesAndClass(data_test2)
 
 
 # Predict test values
@@ -40,6 +38,7 @@ cm_test = confusion_matrix(y_test_pred1, y_test1)
 print((y_test1 != y_test_pred1).sum())
 print(cm_test)
 
+# Metrics
 precision(cm_test)
 recall(cm_test)
 f1_measure(cm_test)
