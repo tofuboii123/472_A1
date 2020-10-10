@@ -1,5 +1,4 @@
 from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import confusion_matrix
 import numpy as np
@@ -22,7 +21,7 @@ X_val1, y_val1 = getFeaturesAndClass(data_val1)
 gnb = GaussianNB()
 y_val_pred1 = gnb.fit(X_train1, y_train1).predict(X_val1)
 
-cm = confusion_matrix(y_val1, y_val_pred1)
+cm = confusion_matrix(y_val_pred1, y_val1)
 # print(cm)
 print((y_val1 != y_val_pred1).sum())
 
