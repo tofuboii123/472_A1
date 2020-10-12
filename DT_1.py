@@ -14,7 +14,7 @@ data_val1 = csvToList("val_1.csv")
 X_val1, y_val1 = getFeaturesAndClass(data_val1)
 
 # Base DT
-clf = tree.DecisionTreeClassifier()
+clf = tree.DecisionTreeClassifier(criterion="entropy")
 clf = clf.fit(X_train1, y_train1)
 y_val_pred1 = clf.predict(X_val1)
 
