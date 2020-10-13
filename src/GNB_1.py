@@ -1,9 +1,4 @@
-from sklearn.datasets import load_iris
 from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score
 import numpy as np
 from metrics import *
 from utility import *
@@ -41,11 +36,4 @@ print(cm_test)
 print((y_test1 != y_test_pred1).sum())
 
 # Metrics
-precision = precision_score(y_test1, y_test_pred1, average=None)
-print(precision)
-recall = recall_score(y_test1, y_test_pred1, average=None)
-print(recall)
-f1 = f1_score(y_test1, y_test_pred1, average=None)
-print(f1)
-
-
+getMetrics(y_test1, y_test_pred1)
