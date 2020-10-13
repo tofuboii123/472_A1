@@ -34,9 +34,4 @@ cm = confusion_matrix(y_test_pred2, y_test2)
 print(cm)
 
 # Metrics
-precision = precision_score(y_test2, y_test_pred2, average=None)
-print(precision)
-recall = recall_score(y_test2, y_test_pred2, average=None)
-print(recall)
-f1 = f1_score(y_test2, y_test_pred2, average=None)
-print(f1)
+getMetrics(y_test2, y_test_pred2)
