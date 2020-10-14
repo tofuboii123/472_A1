@@ -17,7 +17,7 @@ X_train2, y_train2 = getFeaturesAndClass(data_train2)
 data_val2 = csvToList("val_2.csv")
 X_val2, y_val2 = getFeaturesAndClass(data_val2)
 
-mlp = MLPClassifier(max_iter=100000)
+mlp = MLPClassifier(max_iter=5000)
 
 # Different params
 parameter_space = {
