@@ -37,9 +37,12 @@ X_test1, y_test1 = getFeaturesAndClass(data_test1)
 
 y_test_pred1 = clf.predict(X_test1)
 
+createCSV("Best-MLP-DS1", y_test_pred1)
+
 cm = confusion_matrix(y_test_pred1, y_test1)
 print(cm)
 
 # Metrics
-getMetrics(y_test1, y_test_pred1)
+precision, recall, f1, accuracy, f1_macro, f1_weight = getMetrics(y_test1, y_test_pred1)
+writeMetrics("Best-MLP-DS1-Metrics", precision, recall, f1, accuracy, f1_macro, f1_weight)
 

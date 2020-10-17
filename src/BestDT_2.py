@@ -43,8 +43,12 @@ X_test2, y_test2 = getFeaturesAndClass(data_test2)
 
 y_test_pred2 = clf.predict(X_test2)
 
+createCSV("Best-DT-DS2", y_test_pred2)
+
+
 cm = confusion_matrix(y_test_pred2, y_test2)
 print(cm)
 
 # Metrics
-getMetrics(y_test2, y_test_pred2)
+precision, recall, f1, accuracy, f1_macro, f1_weight = getMetrics(y_test2, y_test_pred2)
+writeMetrics("Best-DT-DS2-Metrics", precision, recall, f1, accuracy, f1_macro, f1_weight)

@@ -31,9 +31,14 @@ X_test1, y_test1 = getFeaturesAndClass(data_test1)
 
 # Predict test values
 y_test_pred1 = gnb.fit(X_train1, y_train1).predict(X_test1)
+
+# Create csv
+createCSV("GNB-DS1", y_test_pred1)
+
 cm_test = confusion_matrix(y_test_pred1, y_test1)
 print(cm_test)
 print((y_test1 != y_test_pred1).sum())
 
 # Metrics
-getMetrics(y_test1, y_test_pred1)
+precision, recall, f1, accuracy, f1_macro, f1_weight = getMetrics(y_test1, y_test_pred1)
+writeMetrics("GNB-DS1-Metrics", precision, recall, f1, accuracy, f1_macro, f1_weight)

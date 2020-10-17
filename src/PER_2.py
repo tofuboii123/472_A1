@@ -29,12 +29,16 @@ X_test2, y_test2 = getFeaturesAndClass(data_test2)
 # Predict test values
 y_test_pred2 = clf.predict(X_test2)
 
+createCSV("PER-DS2", y_test_pred2)
+
+
 # Confusion Matrix
 cm = confusion_matrix(y_test_pred2, y_test2)
 print(cm)
 
 # Metrics
-getMetrics(y_test2, y_test_pred2)
+precision, recall, f1, accuracy, f1_macro, f1_weight = getMetrics(y_test2, y_test_pred2)
+writeMetrics("PER-DS2-Metrics", precision, recall, f1, accuracy, f1_macro, f1_weight)
 
 # Getting Perceptron score
 print(clf.score(X_train2, y_train2))

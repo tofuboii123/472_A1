@@ -25,12 +25,15 @@ data_test2 = csvToList("test_with_label_2.csv")
 X_test2, y_test2 = getFeaturesAndClass(data_test2)
 
 # Prediction 
-y_test2_pred2 = clf.predict(X_test2)
+y_test_pred2 = clf.predict(X_test2)
 
-cm = confusion_matrix(y_test2_pred2, y_test2)
+createCSV("Base-MLP-DS2", y_test_pred2)
+
+cm = confusion_matrix(y_test_pred2, y_test2)
 print(cm)
 
 # Metrics
-getMetrics(y_test2, y_test2_pred2)
+precision, recall, f1, accuracy, f1_macro, f1_weight = getMetrics(y_test2, y_test_pred2)
+writeMetrics("Base-MLP-DS2-Metrics", precision, recall, f1, accuracy, f1_macro, f1_weight)
 
 print(clf.score(X_test2, y_test2))
