@@ -14,8 +14,8 @@ X_train1, y_train1 = getFeaturesAndClass(data_train1)
 data_val1 = csvToList("val_1.csv")
 X_val1, y_val1 = getFeaturesAndClass(data_val1)
 
-# Setting the number of iteration
-clf = MLPClassifier(max_iter=300)
+# Setting the number of iteration with activation logistic and solve gradient
+clf = MLPClassifier(max_iter=3500, activation='logistic', solver='sgd')
 clf.fit(X_train1, y_train1)
 
 # Validation Set 
