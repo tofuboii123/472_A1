@@ -9,32 +9,32 @@ from metrics import *
 from utility import *
 
 # Get Training Set and separate the features from classes
-data_train1 = csvToList("train_1.csv")
-X_train1, y_train1 = getFeaturesAndClass(data_train1)
+data_train2 = csvToList("train_2.csv")
+X_train2, y_train2 = getFeaturesAndClass(data_train2)
 
 # Get Validation set and separate the features from classes 
-data_val1 = csvToList("val_1.csv")
-X_val1, y_val1 = getFeaturesAndClass(data_val1)
+data_val2 = csvToList("val_2.csv")
+X_val2, y_val2 = getFeaturesAndClass(data_val2)
 
 # Running at default value which is 1000 iterations
 clf = Perceptron(max_iter=1000, tol=1e-3)
-clf.fit(X_train1, y_train1)
+clf.fit(X_train2, y_train2)
 
 # Validation set
-data_test1 = csvToList("test_with_label_1.csv")
+data_test2 = csvToList("test_with_label_2.csv")
 
 # Separate features from classes
-X_test1, y_test1 = getFeaturesAndClass(data_test1)
+X_test2, y_test2 = getFeaturesAndClass(data_test2)
 
 # Predict test values
-y_test_pred1 = clf.predict(X_test1)
+y_test_pred2 = clf.predict(X_test2)
 
 # Confusion Matrix
-cm = confusion_matrix(y_test_pred1, y_test1)
+cm = confusion_matrix(y_test_pred2, y_test2)
 print(cm)
 
 # Metrics
-getMetrics(y_test1, y_test_pred1)
+getMetrics(y_test2, y_test_pred2)
 
-# Getting Perceptron Score
-print(clf.score(X_train1, y_train1))
+# Getting Perceptron score
+print(clf.score(X_train2, y_train2))
