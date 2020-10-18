@@ -42,3 +42,6 @@ print((y_test1 != y_test_pred1).sum())
 # Metrics
 precision, recall, f1, accuracy, f1_macro, f1_weight = getMetrics(y_test1, y_test_pred1)
 writeMetrics("GNB-DS1-Metrics", precision, recall, f1, accuracy, f1_macro, f1_weight)
+
+# Save confusion matrix as csv
+np.savetxt("output\GNB-DS1-Confusion_Matrix.csv", cm, delimiter=",", fmt='%s')
