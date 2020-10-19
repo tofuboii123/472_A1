@@ -40,3 +40,6 @@ precision, recall, f1, accuracy, f1_macro, f1_weight = getMetrics(y_test2, y_tes
 writeMetrics("Base-MLP-DS2-Metrics", precision, recall, f1, accuracy, f1_macro, f1_weight)
 
 print(clf.score(X_test2, y_test2))
+
+# Save confusion matrix as csv
+np.savetxt("output\Base-MLP-DS2-Confusion_Matrix.csv", cm, delimiter=",", fmt='%s')

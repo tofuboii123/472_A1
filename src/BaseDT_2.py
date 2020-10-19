@@ -42,3 +42,6 @@ print(cm)
 # Metrics
 precision, recall, f1, accuracy, f1_macro, f1_weight = getMetrics(y_test2, y_test_pred2)
 writeMetrics("Base-DT-DS2-Metrics", precision, recall, f1, accuracy, f1_macro, f1_weight)
+
+# Save confusion matrix as csv
+np.savetxt("output\Base-DT-DS2-Confusion_Matrix.csv", cm, delimiter=",", fmt='%s')

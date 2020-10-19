@@ -44,3 +44,6 @@ writeMetrics("PER-DS1-Metrics", precision, recall, f1, accuracy, f1_macro, f1_we
 
 # Getting Perceptron Score
 print(clf.score(X_train1, y_train1))
+
+# Save confusion matrix as csv
+np.savetxt("output\PER-DS1-Confusion_Matrix.csv", cm, delimiter=",", fmt='%s')
