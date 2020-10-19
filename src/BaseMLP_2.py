@@ -23,9 +23,12 @@ data_test2 = csvToList("test_with_label_2.csv")
 
 # Separate features from classes
 X_test2, y_test2 = getFeaturesAndClass(data_test2)
+plotClassInstances(y_test2, 2, "Plotting of the actual test results for BaseMLP_2")
 
 # Prediction 
 y_test_pred2 = clf.predict(X_test2)
+plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results for BaseMLP_2")
+
 
 createCSV("Base-MLP-DS2", y_test_pred2)
 

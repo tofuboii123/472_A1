@@ -27,10 +27,13 @@ data_test2 = csvToList("test_with_label_2.csv")
 
 # Separate features from classes
 X_test2, y_test2 = getFeaturesAndClass(data_test2)
+plotClassInstances(y_test2, 2, "Plotting of the actual results for GNB_2")
 
 
 # Predict test values
 y_test_pred2 = gnb.fit(X_train2, y_train2).predict(X_test2)
+plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results for GNB_2")
+
 
 # Create csv
 createCSV("GNB-DS2", y_test_pred2)

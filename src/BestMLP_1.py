@@ -36,6 +36,9 @@ data_test1 = csvToList("test_with_label_1.csv")
 X_test1, y_test1 = getFeaturesAndClass(data_test1)
 
 y_test_pred1 = clf.predict(X_test1)
+plotClassInstances(y_test_pred1, 1, "Predicted results for BestMLP_1")
+
+createCSV("Best-MLP-DS1", y_test_pred1)
 
 createCSV("Best-MLP-DS1", y_test_pred1)
 

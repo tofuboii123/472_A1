@@ -40,8 +40,13 @@ data_test2 = csvToList("test_with_label_2.csv")
 
 # Separate features from classes
 X_test2, y_test2 = getFeaturesAndClass(data_test2)
+plotClassInstances(y_test2, 2, "Plotting of the test results for BestDT_2")
 
 y_test_pred2 = clf.predict(X_test2)
+plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results for BestDT_2")
+
+createCSV("Best-DT-DS2", y_test_pred2)
+
 
 createCSV("Best-DT-DS2", y_test_pred2)
 

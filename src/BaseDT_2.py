@@ -27,8 +27,12 @@ cm = confusion_matrix(y_val_pred2, y_val2)
 # Test set
 data_test2 = csvToList("test_with_label_2.csv")
 X_test2, y_test2 = getFeaturesAndClass(data_test2)
+plotClassInstances(y_test2, 2, "Plotting of the actual test results of BaseDT_2")
 
 y_test_pred2 = clf.predict(X_test2)
+plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results of BaseDT_2")
+
+createCSV("Base-DT-DS2", y_test_pred2)
 
 createCSV("Base-DT-DS2", y_test_pred2)
 
