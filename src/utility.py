@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn.metrics import *
+import matplotlib.pyplot as plt
 
 def csvToList(csv):
     return np.genfromtxt(f"Assig1-Dataset/{csv}", delimiter=",")
@@ -45,7 +46,31 @@ def writeMetrics(name, precision, recall, f1, accuracy, f1_macro, f1_weight):
         f.write(f"{i},{precision[i]},{recall[i]},{f1[i]}\n")
 
     f.write("\naccuracy,f1_macro,f1_weight\n")
-
     f.write(f"{accuracy},{f1_macro},{f1_weight}")
-    
     f.close()
+
+def plotClassInstances(predicted_labels, dataset, title):
+    if dataset == 1:
+        labels = range(0,26)
+    if dataset == 2:
+        labels = range(0,10)
+    num_occurences = count_labels(labels, predicted_labels)
+    plt.bar(labels, num_occurences, align='center', width=0.5)
+    plt.gca().set_xticks(labels)
+    value_onTop(num_occurences)
+    plt.xlabel("Labels")
+    plt.ylabel("Number of times occured")
+    plt.title(title)
+    plt.show()
+
+def count_labels(labels,predicted_labels):
+    num_occurences = []
+    for value in labels:
+        num_occurences.append(np.count_nonzero(predicted_labels == value))
+    return num_occurences
+
+def value_onTop(num_occurences):
+    for index, value in enumerate(num_occurences):
+        plt.text(index - 0.25, value + 0.01, str(value))
+        
+
