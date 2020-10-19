@@ -5,7 +5,6 @@ from sklearn.metrics import f1_score
 from sklearn.datasets import load_digits
 from sklearn.linear_model import Perceptron
 import numpy as np
-from metrics import *
 from utility import *
 
 # Get Training Set and separate the features from classes

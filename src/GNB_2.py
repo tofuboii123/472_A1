@@ -1,6 +1,5 @@
 from sklearn.naive_bayes import GaussianNB
 import numpy as np
-from metrics import *
 from utility import *
 
 # Training data set

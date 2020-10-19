@@ -5,7 +5,6 @@ from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import f1_score
 import numpy as np
-from metrics import *
 from utility import *
 
 # Training set
@@ -35,10 +34,6 @@ y_test_pred1 = clf.predict(X_test1)
 plotClassInstances(y_test_pred1, 1, "Plotting of the predicted test results of BaseDT_1")
 
 createCSV("Base-DT-DS1", y_test_pred1)
-
-
-createCSV("Base-DT-DS1", y_test_pred1)
-
 
 cm = confusion_matrix(y_test_pred1, y_test1)
 print(cm)

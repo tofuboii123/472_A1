@@ -6,7 +6,6 @@ from sklearn.metrics import recall_score
 from sklearn.metrics import f1_score
 from sklearn.model_selection import GridSearchCV
 import numpy as np
-from metrics import *
 from utility import *
 
 # Training set
@@ -24,7 +23,7 @@ parameter_space = {
     'criterion': ['gini','entropy'],
     'max_depth': [10, None],
     'min_samples_split': [2,3,4,5],
-    'min_impurity_decrease' : [0.0, 1.0, 2.0, 3.0, 4.0],
+    'min_impurity_decrease' : [0.0, 1.0, 2.0, 3.0, 4.0, 5.0],
     'class_weight': ['balanced', None]
 }
 
@@ -46,10 +45,6 @@ y_test_pred1 = clf.predict(X_test1)
 plotClassInstances(y_test_pred1, 1, "Plotting of the predicted results for BestDT_1")
 
 createCSV("Best-DT-DS1", y_test_pred1)
-
-
-createCSV("Best-DT-DS1", y_test_pred1)
-
 
 cm = confusion_matrix(y_test_pred1, y_test1)
 print(cm)

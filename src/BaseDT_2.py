@@ -5,7 +5,6 @@ from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import f1_score
 import numpy as np
-from metrics import *
 from utility import *
 
 # Training set
@@ -31,8 +30,6 @@ plotClassInstances(y_test2, 2, "Plotting of the actual test results of BaseDT_2"
 
 y_test_pred2 = clf.predict(X_test2)
 plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results of BaseDT_2")
-
-createCSV("Base-DT-DS2", y_test_pred2)
 
 createCSV("Base-DT-DS2", y_test_pred2)
 

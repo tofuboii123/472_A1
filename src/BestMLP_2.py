@@ -43,8 +43,6 @@ plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results for BestM
 
 createCSV("Best-MLP-DS2", y_test_pred2)
 
-createCSV("Best-MLP-DS2", y_test_pred2)
-
 cm = confusion_matrix(y_test_pred2, y_test2)
 print(cm)
 
