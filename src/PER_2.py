@@ -31,6 +31,7 @@ plotClassInstances(y_test2, 2, "Plotting of the test results for PER_2")
 y_test_pred2 = clf.predict(X_test2)
 plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results for PER_2")
 
+
 createCSV("PER-DS2", y_test_pred2)
 
 

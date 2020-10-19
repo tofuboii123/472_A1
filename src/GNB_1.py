@@ -34,6 +34,7 @@ plotClassInstances(y_test1, 1, "Plotting of the test results for GNB_1")
 y_test_pred1 = gnb.fit(X_train1, y_train1).predict(X_test1)
 plotClassInstances(y_test_pred1, 1, "Plotting of the predicted results for GNB_1")
 
+
 # Create csv
 createCSV("GNB-DS1", y_test_pred1)
 

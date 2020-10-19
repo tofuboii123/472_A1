@@ -46,9 +46,7 @@ def writeMetrics(name, precision, recall, f1, accuracy, f1_macro, f1_weight):
         f.write(f"{i},{precision[i]},{recall[i]},{f1[i]}\n")
 
     f.write("\naccuracy,f1_macro,f1_weight\n")
-
     f.write(f"{accuracy},{f1_macro},{f1_weight}")
-    
     f.close()
 
 def plotClassInstances(predicted_labels, dataset, title):
@@ -75,3 +73,4 @@ def value_onTop(num_occurences):
     for index, value in enumerate(num_occurences):
         plt.text(index - 0.25, value + 0.01, str(value))
         
+

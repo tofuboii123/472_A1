@@ -34,6 +34,8 @@ plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results of BaseDT
 
 createCSV("Base-DT-DS2", y_test_pred2)
 
+createCSV("Base-DT-DS2", y_test_pred2)
+
 cm = confusion_matrix(y_test_pred2, y_test2)
 print(cm)
 

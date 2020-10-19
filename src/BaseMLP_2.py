@@ -29,6 +29,7 @@ plotClassInstances(y_test2, 2, "Plotting of the actual test results for BaseMLP_
 y_test_pred2 = clf.predict(X_test2)
 plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results for BaseMLP_2")
 
+
 createCSV("Base-MLP-DS2", y_test_pred2)
 
 cm = confusion_matrix(y_test_pred2, y_test2)

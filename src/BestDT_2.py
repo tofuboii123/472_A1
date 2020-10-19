@@ -48,6 +48,9 @@ plotClassInstances(y_test_pred2, 2, "Plotting of the predicted results for BestD
 createCSV("Best-DT-DS2", y_test_pred2)
 
 
+createCSV("Best-DT-DS2", y_test_pred2)
+
+
 cm = confusion_matrix(y_test_pred2, y_test2)
 print(cm)
 
